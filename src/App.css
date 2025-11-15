@@ -1,0 +1,12 @@
+.appFlex{
+    display: flex;
+}
+
+.content{
+    width:100%
+}
+
+.sideBar-height{
+min-height:800px
+}
+
