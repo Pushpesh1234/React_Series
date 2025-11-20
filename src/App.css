@@ -7,6 +7,75 @@
 }
 
 .sideBar-height{
-min-height:800px
+min-height:800px;
+min-width:100px;
 }
 
+.post-card{
+    margin:30px 50px;
+    min-width: 30rem;
+    
+}
+
+.post-tags{
+    margin:0px 5px;
+    padding:8px
+}
+.post-reaction{
+    margin:20px 0 0 0
+}
+
+.post-icon-button{
+    font-size: 40px;
+    width:50px;
+    height:50px;
+    padding:0px;
+    margin:2px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    line-height: 1;
+    overflow: hidden;
+
+}
+
+.post-reaction-counter{
+    border-radius: 100px;
+   max-width:150px;
+    height:50px;
+    margin:10px 1px 1px 50px;
+
+}
+.post-body{
+    max-width:500px;
+    margin:10px 50px
+}
+
+.post-title{
+    max-width:500px;
+    margin:10px 50px
+}
+
+.post-delete-icon{
+    cursor:pointer;
+    
+}
+
+.post-hastags{
+    margin:10px 50px;
+    max-width:500px
+}
+
+.message-fetch-post{
+    margin:100px 0;
+    
+}
+
+.bt-text{
+    color:white;
+    border:none;
+    padding:5px 10px;
+    border-radius:5px
+}

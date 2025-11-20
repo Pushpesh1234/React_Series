@@ -1,41 +1,81 @@
 import { useRef } from "react";
 import { useContext } from "react";
-import {LPost} from '../store/PostListStore'
+import { LPost } from '../store/PostListStore'
+import { IoIosCreate } from "react-icons/io";
 
 export const Form = () => {
-  const {onAddPost,onDeletePost}=useContext(LPost)
-  const postData=useRef()
+  const { onAddPost } = useContext(LPost)
 
-  const onPostHandler=(e, postData)=>{
-    
-    if(e.target.name="add"){
-      onAddPost(e,postData.current.value)
-      postData.current.value=''
-    }
+  const postData = useRef()
+  const postReactions = useRef()
+  const postTitle = useRef()
+  const postTags=useRef()
 
-    else if(e.target.name="delete"){
-      onDeletePost()
-    }
-   
+
+  const onPostHandler = (e, postData, postReactions, postTitle,postTags) => {
+    console.log(postTags.current.value.split(' '))
+    onAddPost(
+      e,
+      postData.current.value,
+      postReactions.current.value,
+      postTitle.current.value,
+      postTags.current.value.split(' ')
+    )
+
+    postData.current.value = ''
+    postReactions.current.value = ''
+    postTitle.current.value = ''
+    postTags.current.value=''
+
   }
-  
+
   return (
-  
-    <form onSubmit={(e)=>{onPostHandler(e,postData)}}>
+
+    <form 
+    onSubmit={(e) => { 
+      onPostHandler(e, postData, postReactions, postTitle,postTags) 
+    }
+      }>
+
       <div className="mb-3">
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          Example textarea
-        </label>
+
+        <input 
+        type="text" 
+        id="title" 
+        placeholder="Post Title" 
+        className="form-control post-title" 
+        ref={postTitle}>
+        </input>
+
         <textarea ref={postData}
-          className="form-control"
+          className="form-control post-body"
+          placeholder="What's on Your mind?"
           id="exampleFormControlTextarea1"
           rows="3"
         ></textarea>
-        <button name="add">Add</button>
-        <button name="delete">DEL</button>
+
+        <input 
+        type="text"
+        id="tags" 
+        className="form-control post-hastags" 
+        placeholder="Put your hastags here"
+        ref={postTags}>  
+        </input>
+
+        <input 
+        type="text" 
+        id="reactions" 
+        className="form-control post-reaction-counter" placeholder="Reactions No." 
+        ref={postReactions}>
+        </input>
+
+        <button className="post-icon-button" >
+           <IoIosCreate />
+        </button>
+
       </div>
-      </form>
-      
-  
+    </form>
+
+
   );
 };

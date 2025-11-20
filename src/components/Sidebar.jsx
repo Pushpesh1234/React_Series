@@ -4,7 +4,7 @@ export const Sidebar = ({selectedTab,setTab}) => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sideBar-height"
-      style={{ width: "280px" }}
+      // style={{ width: "280px" }}
     >
       <a
         href="/"
