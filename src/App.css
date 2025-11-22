@@ -79,3 +79,8 @@ min-width:100px;
     padding:5px 10px;
     border-radius:5px
 }
+
+.reaction-holder{
+    margin:0 8px;
+    width:50px
+}
